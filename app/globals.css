@@ -1,26 +1,57 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.animated-bg {
+    -webkit-animation: bgAnimation 40s ease-in-out infinite;
+    -moz-animation: bgAnimation 40s ease-in-out infinite;
+    animation: bgAnimation 40s ease-in-out infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.animated-blur {
+    -webkit-animation: blurAnimation 40s ease-in-out infinite;
+    -moz-animation: blurAnimation 40s ease-in-out infinite;
+    animation: blurAnimation 40s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.animated-bg-reverse {
+    -webkit-animation: bgAnimationReverse 40s ease-in-out infinite;
+    -moz-animation: bgAnimationReverse 40s ease-in-out infinite;
+    animation: bgAnimationReverse 40s ease-in-out infinite;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes bgAnimation {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.075);
+    }
+}
+
+@keyframes blurAnimation {
+    0%,
+    100% {
+        backdrop-filter: blur(1rem);
+    }
+
+    25% {
+        backdrop-filter: blur(0.4rem);
+    }
+}
+
+@keyframes bgAnimationReverse {
+    0%,
+    100% {
+        transform: scale(1.075);
+    }
+
+    25% {
+        transform: scale(1);
+    }
+}
+
+.fancy-hover:hover {
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
 }
