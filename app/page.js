@@ -1,62 +1,40 @@
 import HomeHero from "@/app/components/HomeHero";
-import LogoSVG from "@/app/components/LogoSVG";
 import Link from "next/link";
 import {SocialIcon} from "react-social-icons";
+import * as motion from "motion/react-client"
+import NavigationLeft from "@/app/components/navigationLeft";
+import ContactModal from "@/app/components/ContactModal";
 
 export default function Home() {
   return (
       <>
           <HomeHero>
-              <div className="w-xl fancy-hover rounded-xl transition-all duration-500">
-                  <Link href="https://google.com" target="_blank" rel="noopener noreferrer">
-                      <LogoSVG/>
-                  </Link>
-              </div>
-              <div className="absolute bottom-6 left-6">
-                  <iframe style={{ borderRadius: '12px' }}
-                          src="https://open.spotify.com/embed/artist/5me0Irg2ANcsgc93uaYrpb?utm_source=generator&theme=0"
-                          width="100%" height="352" frameBorder="0" allowFullScreen=""
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          loading="lazy"></iframe>
-              </div>
-              <ul className="menu absolute bottom-6 right-6">
-                  <li>
-                      <SocialIcon url="www.instagram.com" className="fancy-hover transition-all rounded-full" />
-                  </li>
-                  <li>
-                      <a className="tooltip tooltip-left fancy-hover transition-all rounded-xl" data-tip="Details">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-10 w-10"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="#fff">
-                              <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <div className="w-100 max-w-[300px] md:max-w-xl">
+                  <motion.div initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ ease: "easeIn"}}>
+                      <Link href="https://google.com" target="_blank" rel="noopener noreferrer" className="animated-bg-reverse">
+                          <svg viewBox="0 0 194 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M2.90984 96C0.969945 96 0 95.3998 0 94.1995V1.80045C0 0.600149 0.969945 0 2.90984 0H45.5098C47.4497 0 48.4197 0.600149 48.4197 1.80045V67.1928H68.0902C70.0301 67.1928 71 67.7929 71 68.9932V94.1995C71 95.3998 70.0301 96 68.0902 96H2.90984Z" fill="white"/>
+                              <path d="M79.607 120.958C77.46 120.958 76.3865 120.427 76.3865 119.364V93.0285C76.3865 92.6459 76.4294 92.3058 76.5153 92.0083C76.687 91.7107 77.0735 91.4131 77.6747 91.1155L94.4214 82.826V80.5942L77.2882 72.0495C76.687 71.7094 76.3006 71.4119 76.1288 71.1568C76.0429 70.8592 76 70.5191 76 70.1366V37.5522C76 36.4894 77.0735 35.958 79.2205 35.958H126.369C128.516 35.958 129.59 36.4894 129.59 37.5522V68.7975H140.41V37.5522C140.41 36.4894 141.484 35.958 143.631 35.958H190.779C192.926 35.958 194 36.4894 194 37.5522V70.1366C194 70.5191 193.957 70.8592 193.871 71.1568C193.785 71.4119 193.399 71.7094 192.712 72.0495L175.579 80.5942V82.826L192.325 91.1155C193.012 91.4131 193.399 91.7107 193.485 92.0083C193.571 92.3058 193.614 92.6459 193.614 93.0285V119.364C193.614 120.427 192.54 120.958 190.393 120.958H143.116C140.969 120.958 139.895 120.427 139.895 119.364V94.3038H130.105V119.364C130.105 120.427 129.031 120.958 126.884 120.958H79.607Z" fill="white"/>
+                              <path d="M88.2578 31.958C86.0859 31.958 85 31.4401 85 30.4043V11.5117C85 10.4759 86.0859 9.95801 88.2578 9.95801H127.742C129.914 9.95801 131 10.4759 131 11.5117V30.4043C131 31.4401 129.914 31.958 127.742 31.958H88.2578Z" fill="white"/>
+                              <path d="M146.116 31.958C144.039 31.958 143 31.4401 143 30.4043V11.5117C143 10.4759 144.039 9.95801 146.116 9.95801H183.884C185.961 9.95801 187 10.4759 187 11.5117V30.4043C187 31.4401 185.961 31.958 183.884 31.958H146.116Z" fill="white"/>
                           </svg>
-                      </a>
-                  </li>
-                  <li>
-                      <a className="tooltip tooltip-left fancy-hover transition-all rounded-xl" data-tip="Stats">
-                          <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-10 w-10"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="#fff">
-                              <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                          </svg>
-                      </a>
-                  </li>
+                      </Link>
+                  </motion.div>
+              </div>
+              <NavigationLeft />
+              <ul className="absolute bottom-6 right-6 home-socials">
+                  <motion.li initial={{ opacity: 0, translateX: 50 }} animate={{ opacity: 1, translateX: 0 }} transition={{delay: 0.75}} >
+                      <SocialIcon url="www.instagram.com" />
+                  </motion.li>
+                  <motion.li initial={{ opacity: 0, translateX: 50 }} animate={{ opacity: 1, translateX: 0 }} transition={{delay: 1}} >
+                      <SocialIcon url="www.tiktok.com" />
+                  </motion.li>
+                  <motion.li initial={{ opacity: 0, translateX: 50 }} animate={{ opacity: 1, translateX: 0 }} transition={{delay: 1.25}} >
+                      <SocialIcon url="www.spotify.com" />
+                  </motion.li>
               </ul>
           </HomeHero>
+          <ContactModal />
       </>
   );
 }
