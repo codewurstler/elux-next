@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HomeHero = ({children}) => {
     return (
-        <div className="relative w-full h-screen overflow-hidden">
+        <div className="relative w-full h-dvh overflow-hidden">
                 <Image
                     src="/elux-bg.jpg"
                     alt="Hero"
